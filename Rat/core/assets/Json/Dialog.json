@@ -1,0 +1,32 @@
+{
+  "Dialogs": {
+    "BeginDialog": {
+    "Dialog1":{
+      "Name": "Unknown",
+      "Content": "是亞瑟嗎...?"
+    },
+    "Dialog2":{
+      "Name": "Unknown",
+      "Content": "我...們...的命運.....就交給你了...."
+    },
+    "Dialog3":{
+      "Name": "Unknown",
+      "Content": "加....油..."
+    }
+  },
+    "SecondDialog": {
+      "Dialog1":{
+        "Name": "亞瑟",
+        "Content": "我在哪裡?"
+      },
+      "Dialog2":{
+        "Name": "亞瑟",
+        "Content": "剛剛是誰的聲音?"
+      },
+      "Dialog3":{
+        "Name": "亞瑟",
+        "Content": "先四處看看吧..."
+      }
+    }
+  }
+}

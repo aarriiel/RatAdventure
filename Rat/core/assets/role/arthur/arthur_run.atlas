@@ -1,0 +1,61 @@
+
+arthur_run.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+run0
+  rotate: false
+  xy: 0, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run1
+  rotate: false
+  xy: 80, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run2
+  rotate: false
+  xy: 160, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run3
+  rotate: false
+  xy: 240, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run4
+  rotate: false
+  xy: 320, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run5
+  rotate: false
+  xy: 400, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run6
+  rotate: false
+  xy: 480, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+run7
+  rotate: false
+  xy: 560, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1

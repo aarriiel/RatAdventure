@@ -1,0 +1,96 @@
+
+arthur_attack.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Attack00
+  rotate: false
+  xy: 0, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack01
+  rotate: false
+  xy: 80, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack02
+  rotate: false
+  xy: 160, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack03
+  rotate: false
+  xy: 240, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack04
+  rotate: false
+  xy: 320, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack05
+  rotate: false
+  xy: 400, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack06
+  rotate: false
+  xy: 480, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack07
+  rotate: false
+  xy: 560, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack08
+  rotate: false
+  xy: 640, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack09
+  rotate: false
+  xy: 720, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack10
+  rotate: false
+  xy: 800, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack11
+  rotate: false
+  xy: 880, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+Attack12
+  rotate: false
+  xy: 960, 0
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
