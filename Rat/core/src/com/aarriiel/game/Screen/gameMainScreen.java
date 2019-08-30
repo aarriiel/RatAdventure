@@ -94,9 +94,16 @@ public class gameMainScreen implements Screen {
 
     public void handleInput(float dt){
             if (Gdx.input.isKeyJustPressed(Input.Keys.C)&&arthur.getPower()>1) {
-                arthur.arthurIsAttack = true;
-                arthur.minusThePower();
-                arthur.calThePower();
+                if(arthur.arthurIsAttack1){
+                    if(arthur.arthurIsAttack2)
+                        arthur.arthurIsAttack3 = true;
+                    else
+                        arthur.arthurIsAttack2 = true;
+                }
+                else
+                    arthur.arthurIsAttack1 = true;
+                //arthur.minusThePower();
+                //arthur.calThePower();
             }
             if (Gdx.input.isKeyJustPressed(Input.Keys.UP) && arthur.b2body.getLinearVelocity().y == 0) {
                 arthur.b2body.applyLinearImpulse(new Vector2(0, 6f), arthur.b2body.getWorldCenter(), true);

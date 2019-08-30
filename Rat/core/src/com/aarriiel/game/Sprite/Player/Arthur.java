@@ -2,6 +2,7 @@ package com.aarriiel.game.Sprite.Player;
 
 import com.aarriiel.game.RatAdventure;
 import com.aarriiel.game.Scene.Bar;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.physics.box2d.*;
@@ -20,7 +21,9 @@ public class Arthur extends Sprite {
 
     private float stateTimer;
     //private TextureRegion arthurFall;
-    public boolean arthurIsAttack;
+    public boolean arthurIsAttack1;
+    public boolean arthurIsAttack2;
+    public boolean arthurIsAttack3;
     private boolean runningRight;
     private Animation arthurRun;
     private Animation arthurStand;
@@ -65,7 +68,7 @@ public class Arthur extends Sprite {
         arthurStand = new Animation(0.1f,frames);
         frames.clear();
         runningRight = true;
-        arthurIsAttack = false;
+        arthurIsAttack1 = false;
         stateTimer = 0;
         defineArthur();
         setBounds(RatAdventure.V_WIDTH,RatAdventure.V_HEIGHT,80f/RatAdventure.PPM,64f/RatAdventure.PPM);
@@ -108,14 +111,14 @@ public class Arthur extends Sprite {
             setPosition(b2body.getPosition().x - 64 / RatAdventure.PPM, b2body.getPosition().y - getHeight());
         else if(!runningRight)
             setPosition(b2body.getPosition().x - 96 / RatAdventure.PPM, b2body.getPosition().y - getHeight());
-        if(power!=6){
+        /*if(power!=6){
             powerTimer+=dt;
             if(powerTimer>2){
                 powerTimer = 0;
                 power=power+1;
                 calThePower();
             }
-        }
+        }*/
     }
 
     public void calThePower(){
@@ -168,12 +171,14 @@ public class Arthur extends Sprite {
 
     public TextureRegion getFrame(float dt){
         currentState = getState();
+        stateTimer = currentState==previousState ? stateTimer+dt:0;
+        previousState = currentState;
         TextureRegion region;
         switch (currentState){
             case ATTACKING:
                 region = (TextureRegion) arthurAttack.getKeyFrame(stateTimer);
-                if(arthurAttack.isAnimationFinished(stateTimer)) {
-                    arthurIsAttack = false;
+                if(arthurAttack.isAnimationFinished(stateTimer)||(!arthurIsAttack2 && stateTimer>0.24f )||(!arthurIsAttack3 && stateTimer>0.64f)) {
+                    arthurIsAttack1 = arthurIsAttack2 = arthurIsAttack3 = false;
                 }
                 break;
             case RUNNING:
@@ -190,13 +195,11 @@ public class Arthur extends Sprite {
             region.flip(true,false);
             runningRight = true;
         }
-        stateTimer = currentState==previousState ? stateTimer+dt:0;
-        previousState = currentState;
         return region;
     }
 
     public State getState(){
-        if(arthurIsAttack)
+        if(arthurIsAttack1)
             return State.ATTACKING;
         /*if(b2body.getLinearVelocity().y<0)
             return State.FALLING;*/
