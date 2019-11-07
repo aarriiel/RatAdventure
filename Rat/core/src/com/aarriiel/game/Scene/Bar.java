@@ -24,7 +24,8 @@ public class Bar extends HorizontalGroup {
     }
 
     public void update(int currentValue, int fullValue) {
-        //barImage.setScaleX(maxLength * currentValue / fullValue);
+        barImage.setScaleX(maxLength * currentValue / fullValue);
+        System.out.println("Got hurt");
     }
 }
 

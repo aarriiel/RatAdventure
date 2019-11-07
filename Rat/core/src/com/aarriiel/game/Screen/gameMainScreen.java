@@ -102,6 +102,7 @@ public class gameMainScreen implements Screen {
                 }
                 else
                     arthur.arthurIsAttack1 = true;
+                arthur.arthurHurt(game);
                 //arthur.minusThePower();
                 //arthur.calThePower();
             }

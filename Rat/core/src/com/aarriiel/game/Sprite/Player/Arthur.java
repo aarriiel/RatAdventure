@@ -2,6 +2,8 @@ package com.aarriiel.game.Sprite.Player;
 
 import com.aarriiel.game.RatAdventure;
 import com.aarriiel.game.Scene.Bar;
+import com.aarriiel.game.Screen.gameOverScreen;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -29,8 +31,8 @@ public class Arthur extends Sprite {
     private Animation arthurStand;
     private Animation arthurAttack;
 
-    private static int health = 100;
-    private static final int fullhealth = 100;
+    private static final int fullHealth = 100;
+    private int currentHealth = fullHealth;
     private int power = 6;
     private float powerTimer = 0;
 
@@ -101,7 +103,6 @@ public class Arthur extends Sprite {
     }
 
     public void update(float dt){
-        healthBar.update(health, fullhealth);
         setRegion(getFrame(dt));
         if(b2body.getPosition().x< gamePort.getWorldWidth()/2)
             barTable.setPosition(((b2body.getPosition().x )*RatAdventure.PPM-72)*2/3,((b2body.getPosition().y -getHeight())*RatAdventure.PPM-20)*2/3);
@@ -167,6 +168,12 @@ public class Arthur extends Sprite {
 
     public int getPower(){
         return power;
+    }
+    public void arthurHurt(Game game){
+        currentHealth-=11;
+        healthBar.update(currentHealth, fullHealth);
+        if(currentHealth<=0)
+            game.setScreen(new gameOverScreen(game));
     }
 
     public TextureRegion getFrame(float dt){
