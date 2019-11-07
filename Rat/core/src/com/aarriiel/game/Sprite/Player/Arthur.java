@@ -22,6 +22,7 @@ public class Arthur extends Sprite {
     public Stage stage;
 
     private float stateTimer;
+    private float bloodTimer;
     //private TextureRegion arthurFall;
     public boolean arthurIsAttack1;
     public boolean arthurIsAttack2;
@@ -72,6 +73,7 @@ public class Arthur extends Sprite {
         runningRight = true;
         arthurIsAttack1 = false;
         stateTimer = 0;
+        bloodTimer = 0;
         defineArthur();
         setBounds(RatAdventure.V_WIDTH,RatAdventure.V_HEIGHT,80f/RatAdventure.PPM,64f/RatAdventure.PPM);
         setScale(2);
@@ -103,6 +105,7 @@ public class Arthur extends Sprite {
     }
 
     public void update(float dt){
+        restore(dt);
         setRegion(getFrame(dt));
         if(b2body.getPosition().x< gamePort.getWorldWidth()/2)
             barTable.setPosition(((b2body.getPosition().x )*RatAdventure.PPM-72)*2/3,((b2body.getPosition().y -getHeight())*RatAdventure.PPM-20)*2/3);
@@ -174,6 +177,19 @@ public class Arthur extends Sprite {
         healthBar.update(currentHealth, fullHealth);
         if(currentHealth<=0)
             game.setScreen(new gameOverScreen(game));
+    }
+
+    public void restore(float dt){
+        if(currentHealth<fullHealth){
+            bloodTimer+=dt;
+            if(bloodTimer>1){
+                bloodTimer = 0;
+                currentHealth=currentHealth+5>100?100:currentHealth+5;
+                healthBar.update(currentHealth,fullHealth);
+            }
+        }
+        else
+            bloodTimer = 0;
     }
 
     public TextureRegion getFrame(float dt){
